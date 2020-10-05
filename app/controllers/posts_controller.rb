@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all.order(id: :desc)
+    @posts = Post.all.includes(:tag).order(id: :desc)
     @post = Post.new
   end
 

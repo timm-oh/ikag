@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'pry'
+  gem "bullet", "~> 6.1"
 end
 
 group :development do

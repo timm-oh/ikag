@@ -2,6 +2,8 @@
 
 one:
   body: MyText
+  tag: house_repairs
 
 two:
   body: MyText
+  tag: house_repairs
