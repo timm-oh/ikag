@@ -1,5 +1,8 @@
-= render partial: 'form'
-
-section
-  h3 Posts
-  = render @posts
+.columns
+  .column
+  .column
+    = render partial: 'form'
+    section.pt-1
+      h3 Posts
+      = render @posts
+  .column
