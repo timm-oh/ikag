@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  variables:
+    statement_timeout: <%= ENV["PG_STATEMENT_TIMEOUT"] || 15000 %>
 
 development:
   <<: *default
@@ -80,6 +82,4 @@ test:
 #
 production:
   <<: *default
-  database: know_a_guy_production
-  username: know_a_guy
-  password: <%= ENV['KNOW_A_GUY_DATABASE_PASSWORD'] %>
+  url:  <%= ENV["DATABASE_URL"] %>
