@@ -1,20 +1,10 @@
-h1 Listing posts
+.container
+  .form
+    = render partial: 'form'
 
-.form
-  = render partial: 'form'
-
-table
-  thead
-    tr
-      th Body
-      th
-      th
-      th
-
-  tbody
+  section
+    h3 Posts
     - @posts.each do |post|
-      tr
-        td = post.body
-        td = link_to 'Show', post
-
-br
+      article
+        div = post.body
+        div = post.created_at

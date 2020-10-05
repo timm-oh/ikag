@@ -1,12 +1,10 @@
-= form_for @post do |f|
+= form_with model: @post, data: { controller: 'remote', action: 'ajax:error->remote#replace' } do |f|
   - if @post.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-      ul
-        - @post.errors.full_messages.each do |message|
-          li = message
+    ul
+      - @post.errors.full_messages.each do |message|
+        li = message
 
   .field
-    = f.label :body
-    = f.text_area :body
-  .actions = f.submit
+    = f.text_field :body, placeholder: 'type away :)'
+  .actions
+    = f.submit "Post", data: { disable_with: 'Posting...' }

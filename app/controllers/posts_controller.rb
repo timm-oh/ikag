@@ -3,12 +3,8 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.all.order(id: :desc)
     @post = Post.new
-  end
-
-  # GET /posts/1
-  def show
   end
 
   # POST /posts
@@ -18,7 +14,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
     else
-      render :new
+      render partial: 'form', status: :unprocessable_entity
     end
   end
 
