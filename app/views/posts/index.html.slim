@@ -1,0 +1,20 @@
+h1 Listing posts
+
+.form
+  = render partial: 'form'
+
+table
+  thead
+    tr
+      th Body
+      th
+      th
+      th
+
+  tbody
+    - @posts.each do |post|
+      tr
+        td = post.body
+        td = link_to 'Show', post
+
+br
