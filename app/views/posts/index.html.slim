@@ -1,10 +1,5 @@
-.container
-  .form
-    = render partial: 'form'
+= render partial: 'form'
 
-  section
-    h3 Posts
-    - @posts.each do |post|
-      article
-        div = post.body
-        div = post.created_at
+section
+  h3 Posts
+  = render @posts

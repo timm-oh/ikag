@@ -13,4 +13,5 @@ html
       .navbar-brand
         = link_to root_url, class: 'navbar-item' do
           = image_pack_tag 'logo.svg'
-    = yield
+    .container
+      = yield

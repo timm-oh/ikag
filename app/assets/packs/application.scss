@@ -1,1 +1,5 @@
 @import 'bulma';
+
+.post__card + .post__card {
+  margin-top: 1rem;
+}
