@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all.includes(:tag).order(id: :desc)
+    @posts = Post.all.order(id: :desc)
     @post = Post.new
   end
 
@@ -26,6 +26,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:body, :tag_id)
+      params.require(:post).permit(:body)
     end
 end

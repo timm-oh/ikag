@@ -7,7 +7,5 @@
   .field
     .control
       = f.text_field :body, placeholder: 'post something! :D', class: "post__body-input input #{@post.errors[:body].present? ? 'is-danger' : ''}"
-  .field.select.mr-2
-    = f.select :tag_id, @post.tags.pluck(:name, :id)
 
   = f.submit "Post", data: { disable_with: 'Posting...' }, class: 'button is-primary align-right'

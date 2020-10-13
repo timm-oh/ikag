@@ -11,9 +11,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create post" do
-    tag = Tag.first
     assert_difference('Post.count') do
-      post posts_url, params: { post: { body: @post.body, tag_id: tag.id } }
+      post posts_url, params: { post: { body: @post.body } }
     end
 
     assert_redirected_to posts_url
